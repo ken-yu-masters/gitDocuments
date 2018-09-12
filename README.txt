@@ -1,5 +1,8 @@
 # gitDocuments
 
+#show GUI
+gitk &
+
 #show configs
 #1 local config
 git config --list
