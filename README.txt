@@ -6,6 +6,9 @@ git config --list
 #2 global config
 git config --global --list
 
+#show current working directory files status
+git status
+
 #show commits from a author
 git log --author="author Name" --oneline
 
@@ -37,6 +40,18 @@ git am 2.patch
 git am 3.patch
 ...
 git push
+
+#create a new branch.
+git checkout -b local_branch_name remoteDepoName/remoteBranchName
+
+#show all branches
+git branch
+
+#show all branches and reltaed remote tracking branches.
+git branch -vv
+
+#switch brach
+git checkout local_branch_name
 
 #when your local branch name is different with remote branch name.
 #Let local branch automatically push to remote tracking  branch
