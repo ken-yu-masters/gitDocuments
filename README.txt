@@ -24,6 +24,19 @@ git cherry-pick commit_number_2
 ...
 git push
 
+#create patch apply patch
+git checkout to_merge_from_local_branch_name_1
+git log --oneline
+#pick one or more commit_number
+git format-patch $commit_number_1 -1 -o $outputDir
+git format-patch $commit_number_2 -1 -o $outputDir
+...
+git checkout to_merge_to_local_branch_name_2
+git am 1.patch
+git am 2.patch
+git am 3.patch
+...
+git push
 
 #when your local branch name is different with remote branch name.
 #Let local branch automatically push to remote tracking  branch
