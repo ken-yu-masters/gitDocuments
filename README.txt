@@ -15,6 +15,11 @@ git status
 #show commits from a author
 git log --author="author Name" --oneline
 
+# show SHA, date, authorName, description from a commit_number
+# show date with blue color
+# show description with green color
+git log --oneline --pretty=format:"%h %Cblue%ad%Creset %an %Cgreen%s%Creset" --date=format:"%Y-%m-%d %H:%M:%S" commit_number...HEAD
+
 #show a commit
 git show commit_number
 #example:
