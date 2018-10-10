@@ -34,6 +34,8 @@ git clean -fdx
 git reset
 git checkout .
 
+# Revert a local commit.
+git revert commit_number
 
 #cherry-pick merge.
 git checkout to_merge_from_local_branch_name_1
