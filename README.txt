@@ -25,7 +25,6 @@ git show commit_number
 #example:
 git show d470695c4a7
 
-
 # Revert changes to modified files.
 git reset --hard
 # Remove all untracked files and directories. (`-f` is `force`, `-d` is `remove directories` -x will also remove all ignored files)
@@ -33,6 +32,9 @@ git clean -fdx
 #you can replace "git reset --hard" with 2 commands below:
 git reset
 git checkout .
+
+#revert a changed file
+git checkout -- relative/path/to/the/file/fileName
 
 # Revert a local commit.
 git revert commit_number
