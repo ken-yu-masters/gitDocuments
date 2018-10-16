@@ -25,6 +25,20 @@ git show commit_number
 #example:
 git show d470695c4a7
 
+#temporary store all changed files
+git stash
+Or
+git stash save new_stash_change_name
+#list all stored changes. it will show a list of stashed changes and its indices.
+git stash list
+#retrive a stored change:
+git stash apply stash@{stash_change_number}
+Or
+git stash apply stash^{/stash_change_name}
+#delete one stored change
+git stash drop stash@{stash_change_number}
+
+
 # Revert changes to modified files.
 git reset --hard
 # Remove all untracked files and directories. (`-f` is `force`, `-d` is `remove directories` -x will also remove all ignored files)
