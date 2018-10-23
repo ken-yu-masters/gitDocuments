@@ -77,14 +77,18 @@ git am 3.patch
 ...
 git push
 
-#create a new branch.
-git checkout -b local_branch_name remoteDepoName/remoteBranchName
 
 #show all branches
+git branch -a
+#list all remote branches
+git branch -r
+#list all local branches
 git branch
-
-#show all branches and reltaed remote tracking branches.
+#show all local branches and related remote tracking branches.
 git branch -vv
+
+#create a new branch.
+git checkout -b local_branch_name remoteDepoName/remoteBranchName
 
 #switch brach
 git checkout local_branch_name
