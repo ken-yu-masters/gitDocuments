@@ -132,3 +132,5 @@ git push remoteDepoName --delete remote/branch/name
 #exmaple
 git push origin --delete newFeatures/unstables/feature1
 
+#delete a local branch.
+git branch -d localBranchName
