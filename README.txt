@@ -25,6 +25,25 @@ git show commit_number
 #example:
 git show d470695c4a7
 
+#list all remote depos
+git remote show
+#list all remote depos with detail information
+git remote -v
+#show a depo info
+git remote show remoteDepoName
+#for exmample
+git remote show origin
+
+#clone a remote depo(Repository) to local
+git clone remote_depo_url
+#for exmaple
+git clone https://github.com/ken-yu-masters/gitDocuments
+#add another depo to local
+git add remoteDepoName2 remote_depo_url
+#remote a remote depo
+git rm remoteDepoName
+
+
 #temporary store all changed files
 git stash
 Or
@@ -87,8 +106,15 @@ git branch
 #show all local branches and related remote tracking branches.
 git branch -vv
 
-#create a new branch.
+#checkout a remote branch to local
 git checkout -b local_branch_name remoteDepoName/remoteBranchName
+
+#create a new branch.
+git checkout -b new_local_branch_name
+#then yu can push it to remote.
+git push remoteDepoName local_branch_name:remote_branch_name
+#exmaple
+git push origin branch1:remote_branch_1
 
 #switch brach
 git checkout local_branch_name
