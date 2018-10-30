@@ -116,6 +116,9 @@ git push remoteDepoName local_branch_name:remote_branch_name
 #exmaple
 git push origin branch1:remote_branch_1
 
+#set remote tracking branch for a local branch
+git branch -u remote_branch_1 local_branch_name
+
 #switch brach
 git checkout local_branch_name
 
