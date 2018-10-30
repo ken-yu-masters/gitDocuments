@@ -107,17 +107,20 @@ git branch
 git branch -vv
 
 #checkout a remote branch to local
-git checkout -b local_branch_name remoteDepoName/remoteBranchName
+git checkout -b local_branch_name remoteDepoName/remote_branch_name
 
 #create a new branch.
 git checkout -b new_local_branch_name
 #then yu can push it to remote.
 git push remoteDepoName local_branch_name:remote_branch_name
 #exmaple
-git push origin branch1:remote_branch_1
+git push origin ken_debug_crash:OfficalRelease/3.0/ken_debug_crash
+#you will get a remote remote branch origin/OfficalRelease/3.0/ken_debug_crash
 
 #set remote tracking branch for a local branch
 git branch -u remote_branch_1 local_branch_name
+#example
+git branch -u origin/OfficalRelease/3.0/ken_debug_crash ken_debug_crash
 
 #switch brach
 git checkout local_branch_name
