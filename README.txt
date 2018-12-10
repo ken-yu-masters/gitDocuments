@@ -96,6 +96,23 @@ git am 3.patch
 ...
 git push
 
+#rebase
+#
+# Current branch is "topic":
+#
+#          A---B---C topic
+#         /
+#    D---E---A'---F master
+#
+# Change to:
+#
+#                   B'---C' topic
+#                  /
+#    D---E---A'---F master
+#
+# git rebase parentBranchName childBranchName # if you are on the child branch, you can omit the childBranchName 
+git rebase master topic
+
 
 #show all branches
 git branch -a
