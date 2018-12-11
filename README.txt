@@ -104,14 +104,14 @@ git push
 #         /
 #    D---E---A'---F master
 #
+# git rebase master topic
 # Change to:
 #
 #                   B'---C' topic
 #                  /
 #    D---E---A'---F master
 #
-# git rebase parentBranchName childBranchName # if you are on the child branch, you can omit the childBranchName 
-git rebase master topic
+git rebase parentBranchName childBranchName # if you are on the child branch, you can omit the childBranchName 
 
 
 #show all branches
