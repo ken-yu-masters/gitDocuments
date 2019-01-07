@@ -12,6 +12,12 @@ git config --global --list
 #show current working directory files status
 git status
 
+#list all untracked files.
+git ls-files --others --exclude-standard
+
+#list all merge conflict files
+git diff --name-only --diff-filter=U
+
 #show commits from a author
 git log --author="author Name" --oneline
 
@@ -71,6 +77,26 @@ git checkout -- relative/path/to/the/file/fileName
 
 # Revert a local commit.
 git revert commit_number
+
+#merge 
+git merge remote_branch_name
+#example 
+git merge origin/master
+
+#resolve conflicts
+#need set kdiff3 as default merge tool first:
+# git config --list | grep merge
+#    merge.tool=kdiff3
+#    mergetool.kdiff3.path=C:/Program Files/KDiff3/kdiff3.exe
+git mergetool
+
+#commit and push the merge. 
+
+#delete un-tracked files because merge tool will generate "*.orig" file which is the un-merge version of the conflicts.
+git ls-files --others --exclude-standard  | grep '.orig' | xargs rm
+
+#abort a merge.
+git merge --abort
 
 #cherry-pick merge.
 git checkout to_merge_from_local_branch_name_1
