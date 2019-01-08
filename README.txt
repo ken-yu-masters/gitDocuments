@@ -4,14 +4,38 @@
 gitk &
 
 #show configs
-git config --list --system
-git config --list --global
-git config --list --local
+git config --list --system  #for all users on current compupter
+git config --list --global  #for all sandboxes(projects) of current user.
+git config --list --local   #for current sandboxes(projects)
 
-#change configs
+#edit configs: pop up an editor
 git config --system --edit  #for all users on current compupter
 git config --global --edit  #for all sandboxes(projects) of current user.
 git config --local --edit   #for current sandboxes(projects)
+
+#command line alias editing:
+#1:add a alias
+git config alias.aliasName1 'content of the alias'
+#example :
+  git config --global alias.goodLog 'log --pretty=format:"%h %Cblue%ad%Creset %an %Cgreen%s%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
+
+#2:get content of an alias
+git config --get-all alias.aliasName1
+#example
+  git config --global --get-all alias.goodLog
+
+#3: replace an alias
+git config --replace-all alias.aliasName1 ' new content of the alias'
+#example
+  git config --global --replace-all alias.goodLog 'log --pretty=format:"%h %Cblue%ad%Creset %an %Cgreen%s%Creset" --date=format:"%Y-%m-%d-%H:%M:%S"'
+
+#4: delete an alias
+git config --unset alias.aliasName1
+
+#5: it is equal to following section in gitconfig file. 
+[alias]
+	goodLog = log --pretty=format:\"%h %Cblue%ad%Creset %an %Cgreen%s%Creset\" --date=format:\"%Y-%m-%d %H:%M:%S\"
+
 
 #show current working directory files status
 git status
