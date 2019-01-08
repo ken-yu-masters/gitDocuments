@@ -12,11 +12,16 @@ git config --global --list
 #show current working directory files status
 git status
 
+#list all local modified files
+git ls-files -m
+
 #list all untracked files.
 git ls-files --others --exclude-standard
 
 #list all merge conflict files
 git diff --name-only --diff-filter=U
+Or
+git ls-files -u
 
 #show commits from a author
 git log --author="author Name" --oneline
