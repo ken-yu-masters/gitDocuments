@@ -4,10 +4,14 @@
 gitk &
 
 #show configs
-#1 local config
-git config --list
-#2 global config
-git config --global --list
+git config --list --system
+git config --list --global
+git config --list --local
+
+#change configs
+git config --system --edit  #for all users on current compupter
+git config --global --edit  #for all sandboxes(projects) of current user.
+git config --local --edit   #for current sandboxes(projects)
 
 #show current working directory files status
 git status
