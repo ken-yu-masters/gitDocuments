@@ -141,6 +141,12 @@ git cherry-pick commit_number_2
 ...
 git push
 
+#revert all cherry pick commits
+git reset --hard HEAD~
+
+#revert a commit : will add a revert commit to the git log 
+git revert commit_number_1
+
 #create patch apply patch
 git checkout to_merge_from_local_branch_name_1
 git log --oneline
