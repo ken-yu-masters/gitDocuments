@@ -96,6 +96,18 @@ git stash apply stash^{/stash_change_name}
 #delete one stored change
 git stash drop stash@{stash_change_number}
 
+#check in code
+#1:adds all tracked files to the staging area
+git add -A
+#2: commit any files that have already been added to the staging area
+git commit -m "new message"
+#3:
+git push
+#-----------OR:
+#1:adds all tracked files to the staging area and commits them in one step.
+git commit -a -m "new message"
+#2:
+git push
 
 # Revert changes to modified files.
 git reset --hard
