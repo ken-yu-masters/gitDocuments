@@ -123,6 +123,12 @@ git checkout -- relative/path/to/the/file/fileName
 # Revert a local commit.
 git revert commit_number
 
+#revert/delete/(give up) all local commits(not pushed)
+git reset --hard UpperRemoteDepoName/upper_remote_branch_name
+#example:
+git branch -vv | grep '*'           #find the remote depo/branch name which currnet branch is tracking
+git reset --hard origin/master      #delete all un-pushed commits if current branch is "master"
+
 #merge 
 git merge remote_branch_name
 #example 
