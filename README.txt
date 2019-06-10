@@ -188,6 +188,7 @@ git push
 #    D---E---A'---F master
 #
 # git rebase master topic
+# OR : git rebase --onto master topic
 # Change to:
 #
 #                   B'---C' topic
@@ -195,6 +196,16 @@ git push
 #    D---E---A'---F master
 #
 git rebase parentBranchName childBranchName # if you are on the child branch, you can omit the childBranchName 
+#Real process:
+#Example:
+#https://dzone.com/articles/the-multiple-usages-of-git-rebase-onto
+#https://stackoverflow.com/questions/42861353/git-pull-after-git-rebase
+#on feature branch(topic), do it daily.
+git fetch --all
+git merge --onto origin/master topic
+git status(will report local topic branch and remote topic branch are diverged.)
+git pull --rebase
+git push
 
 
 #show all branches
