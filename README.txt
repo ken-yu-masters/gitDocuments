@@ -45,6 +45,9 @@ git ls-files -m
 
 #list all untracked files.
 git ls-files --others --exclude-standard
+#list all untracked files and delete them. (the file names may constain white space, so we need tell xargs only use '\n' as delimiter)
+git ls-files --others --exclude-standard | xargs -d '\n' rm
+
 
 #list all merge conflict files
 git diff --name-only --diff-filter=U
