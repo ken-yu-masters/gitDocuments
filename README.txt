@@ -210,6 +210,14 @@ git status(will report local topic branch and remote topic branch are diverged.)
 git pull --rebase
 git push
 
+#When you rebase multi-times to a branch, you need resolve same conflicts every time.
+#But when you turn following config on, git will remember what you do, and repeat it automatically next time.
+git config --global rerere.enabled true
+#you can check it by:
+git rerere status
+git rerere diff
+#you can clear it by:
+git rerere clear
 
 #show all branches
 git branch -a
