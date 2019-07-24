@@ -147,7 +147,7 @@ git mergetool
 #commit and push the merge. 
 
 #delete un-tracked files because merge tool will generate "*.orig" file which is the un-merge version of the conflicts.
-git ls-files --others --exclude-standard  | grep '.orig' | xargs rm
+git ls-files --others --exclude-standard  | grep '.orig' | xargs -d '\n' rm
 
 #abort a merge.
 git merge --abort
