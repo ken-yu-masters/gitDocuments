@@ -67,6 +67,12 @@ git show commit_number
 #example:
 git show d470695c4a7
 
+#show all commits directly committed to current branch.
+#exclude those which have been rebased or merged from other branch
+#Basicly, idea is : rebased or merged commits have different auther email (%ae) and commit email (%ce)
+git log --pretty=format:"%h %Cblue%ad %cd%Creset %Cred %ae %Creset %ce %Cgreen%s%Creset" --date=format:"%Y-%m-%d_%H:%M:%S" since_this_commit_number..  > history.txt
+cat history.txt | awk '{if ($4 == $5) {print $0}}' > realHistory.txt
+ 
 #list all remote depos
 git remote show
 #list all remote depos with detail information
