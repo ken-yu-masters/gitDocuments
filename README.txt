@@ -206,12 +206,27 @@ git push
 #
 git rebase parentBranchName childBranchName # if you are on the child branch, you can omit the childBranchName 
 #Real process:
-#Example:
+#Example1: rebase feature branch on top of master branch.
+git fetch --all
+git checkout master
+git pull
+git checkout InVision/Review/TP25235_Licensing
+git pull
+git rebase master
+git mergetool
+git rebase --continue
+git mergetool
+git rebase --continue
+...
+git status
+git push -f
+
+#Example2: rebase feature branch inside master branch.
 #https://dzone.com/articles/the-multiple-usages-of-git-rebase-onto
 #https://stackoverflow.com/questions/42861353/git-pull-after-git-rebase
 #on feature branch(topic), do it daily.
 git fetch --all
-git merge --onto origin/master topic
+git rebase --onto origin/master topic
 git status(will report local topic branch and remote topic branch are diverged.)
 git pull --rebase
 git push
