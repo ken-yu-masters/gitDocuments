@@ -251,6 +251,11 @@ git branch -vv
 
 #checkout a remote branch to local
 git checkout -b local_branch_name remoteDepoName/remote_branch_name
+#OR:
+git checkout remote_branch_name
+#For exmaple:
+git checkout InVision/Review/TP25235_Licensing
+git checkout -b TP25235_Licensing origin/InVision/Review/TP25235_Licensing
 
 #create a new branch.
 git checkout -b new_local_branch_name
